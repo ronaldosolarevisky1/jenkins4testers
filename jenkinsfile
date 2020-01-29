@@ -1,15 +1,21 @@
-papeline {
-    agent any
+pipeline {
+    agent {
+        docker {
+            image "ruby"
+        }
+    }
     stages {
         stage("Build") {
-            steps {
-                sh "bundle install'"
-            }
+
+        }steps {
+            sh "bundler install"
         }
-        stage("Tests") {
-            steps {
-                sh "echo 'simulando um teste automatizado'"
+    }
+    stage("Testes") {
+        steps {
+            sh "echo 'simulando um teste automatizado'"
             }
         }
     }
+ 
 }
